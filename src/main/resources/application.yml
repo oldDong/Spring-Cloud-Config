@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: config-center
+  profiles:
+    active: db
+
+server:
+  context-path: /config-center/
+  port: 8888
+
+---
+spring:
+  profiles: daily
+  cloud:
+    config:
+      server:
+        git:
+          username: ******
+          password: ******
+          uri: ******
+          search-paths: ${spring.profiles}
+      label: master
+
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: /Users/dongzj/conf
+
+---
+spring:
+  profiles: db
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ******
+    username: ******
+    password: ******
+    tomcat:
+      max-idle: 2
+      initial-size: 2
+      min-idle: 2

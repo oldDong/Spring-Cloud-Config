@@ -1,0 +1,2 @@
+logging.path: /tmp/logs/excel-center
+http.center.ips: 127.0.0.1,127.0.0.2

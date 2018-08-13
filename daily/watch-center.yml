@@ -1,0 +1,4 @@
+ace.center.ip: 127.0.0.1
+ace.center.port: 16999
+root.path: /usr/local/jars
+server.port: 8321
